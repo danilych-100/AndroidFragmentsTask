@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">fragmentstask</string>
+    <string name="AddActionButton">Добавить</string>
+    <string name="RemoveActionButton">Удалить</string>
+    <string name="documentTitleName">Документ №</string>
+</resources>
