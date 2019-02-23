@@ -42,7 +42,7 @@ public class SimpleFragment extends Fragment {
         View fragmentView = inflater.inflate(R.layout.simple_fragment, container, false);
 
         TextView fragmentTitle = fragmentView.findViewById(R.id.fragmentTitle);
-        fragmentTitle.setText(getString(R.string.documentTitleName) + fragmentsCounter);
+        fragmentTitle.setText(getString(R.string.documentTitleName, fragmentsCounter));
         return fragmentView;
     }
 }
