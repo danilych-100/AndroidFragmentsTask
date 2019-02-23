@@ -43,6 +43,7 @@ public class SimpleFragment extends Fragment {
 
         TextView fragmentTitle = fragmentView.findViewById(R.id.fragmentTitle);
         fragmentTitle.setText(getString(R.string.documentTitleName, fragmentsCounter));
+
         return fragmentView;
     }
 }

@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void onMenuAddClicked(){
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.mainContainer, SimpleFragment.newInstance(
+                .replace(R.id.mainContainer, SimpleFragment.newInstance(
                         getSupportFragmentManager().getBackStackEntryCount() + 1)
                 )
                 .addToBackStack(null)
