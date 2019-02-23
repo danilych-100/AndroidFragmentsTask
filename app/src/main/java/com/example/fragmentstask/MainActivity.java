@@ -17,6 +17,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+            @Override
+            public void onBackStackChanged() {
+                if(getSupportFragmentManager().getBackStackEntryCount() == 0){
+                    switchRemoveButtonMode(false);
+                } else {
+                    switchRemoveButtonMode(true);
+                }
+            }
+        });
     }
 
     @Override
@@ -36,16 +47,11 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.action_add) {
             onMenuAddClicked();
 
-            switchRemoveButtonMode(true);
-
             return true;
         }
         if(item.getItemId() == R.id.action_remove){
             onMenuRemoveClicked();
 
-            if(getSupportFragmentManager().getBackStackEntryCount() == 1){
-                item.setEnabled(false);
-            }
             return true;
         }
         return super.onOptionsItemSelected(item);
